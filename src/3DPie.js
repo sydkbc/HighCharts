@@ -1,55 +1,47 @@
 import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import "./3d.css";
 
 const options = {
   chart: {
-    type: "pie",
+    type: "column",
     options3d: {
       enabled: true,
-      alpha: 45,
-      beta: 0
+      alpha: 10,
+      beta: 25,
+      depth: 70
     }
   },
   title: {
-    text: "Browser market shares at a specific website, 2014"
+    text: "3D chart with null values"
   },
-  accessibility: {
-    point: {
-      valueSuffix: "%"
-    }
-  },
-  tooltip: {
-    pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+  subtitle: {
+    text: "Notice the difference between a 0 value and a null point"
   },
   plotOptions: {
-    pie: {
-      allowPointSelect: true,
-      cursor: "pointer",
-      depth: 35,
-      dataLabels: {
-        enabled: true,
-        format: "{point.name}"
+    column: {
+      depth: 25
+    }
+  },
+  xAxis: {
+    categories: Highcharts.getOptions().lang.shortMonths,
+    labels: {
+      skew3d: true,
+      style: {
+        fontSize: "16px"
       }
+    }
+  },
+  yAxis: {
+    title: {
+      text: null
     }
   },
   series: [
     {
-      type: "pie",
-      name: "Browser share",
-      data: [
-        ["Firefox", 45.0],
-        ["IE", 26.8],
-        {
-          name: "Chrome",
-          y: 12.8,
-          sliced: true,
-          selected: true
-        },
-        ["Safari", 8.5],
-        ["Opera", 6.2],
-        ["Others", 0.7]
-      ]
+      name: "Sales",
+      data: [2, 3, null, 4, 0, 5, 1, 4, 6, 3]
     }
   ]
 };

@@ -13,6 +13,8 @@ import InvertedBar from "./InvertedBar";
 import TripleBar from "./TripleBar";
 import DynamicLine from "./DynamicLine";
 import D3Pie from "./3DPie";
+import MultiLine from "./MultipleLines";
+import DoubleLine from "./DoubleLine";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -129,12 +131,20 @@ function App() {
           <TripleBar />
         </div>
         <div className="flex-fill bd-highlight">
-          <InvertedBar />
+          <MultiLine />
         </div>
       </div>
       <div className="d-flex bd-highlight">
         <div className="flex-fill bd-highlight">
           <DynamicLine />
+        </div>
+        <div className="flex-fill bd-highlight">
+          <D3Pie />
+        </div>
+      </div>
+      <div className="d-flex bd-highlight">
+        <div className="flex-fill bd-highlight">
+          <DoubleLine />
         </div>
         <div className="flex-fill bd-highlight">
           <D3Pie />
