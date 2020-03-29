@@ -8,6 +8,11 @@ import mapData from "./mapData.js";
 import Highcharts from "highcharts/highstock";
 import ComplexChart from "./ComplexChart.js";
 import Pie from "./Pie";
+import Bar from "./Bar";
+import InvertedBar from "./InvertedBar";
+import TripleBar from "./TripleBar";
+import DynamicLine from "./DynamicLine";
+import D3Pie from "./3DPie";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -94,6 +99,7 @@ const mapOptions = {
 function App() {
   return (
     <div className="App" style={{ marginTop: "50px" }}>
+      Demo Under: https://www.highcharts.com/demo/
       <div className="d-flex bd-highlight">
         <div className="flex-fill bd-highlight">
           <ComplexChart />
@@ -108,6 +114,30 @@ function App() {
         </div>
         <div className="flex-fill bd-highlight">
           <Map options={mapOptions} highcharts={Highcharts} />
+        </div>
+      </div>
+      <div className="d-flex bd-highlight">
+        <div className="flex-fill bd-highlight">
+          <Bar />
+        </div>
+        <div className="flex-fill bd-highlight">
+          <InvertedBar />
+        </div>
+      </div>
+      <div className="d-flex bd-highlight">
+        <div className="flex-fill bd-highlight">
+          <TripleBar />
+        </div>
+        <div className="flex-fill bd-highlight">
+          <InvertedBar />
+        </div>
+      </div>
+      <div className="d-flex bd-highlight">
+        <div className="flex-fill bd-highlight">
+          <DynamicLine />
+        </div>
+        <div className="flex-fill bd-highlight">
+          <D3Pie />
         </div>
       </div>
     </div>
